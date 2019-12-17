@@ -7,8 +7,8 @@ const app = express()
 // connect Database
 connectDB()
 
-// init middleware
-app.use(express.json({extended: false}))
+// init middleware (body parser)
+app.use(express.json({ extended: false }))
 
 app.get('/', (req, res) => res.send('API RUNNING'))
 
@@ -21,4 +21,4 @@ app.use('/api/posts', require('./routes/api/posts'))
 
 const PORT = process.env.PORT || 5000
 
-app.listen(PORT, ()=> console.log(`Server Started at PORT: ${PORT}`))
+app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`))
